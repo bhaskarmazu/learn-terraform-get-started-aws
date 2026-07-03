@@ -1,5 +1,6 @@
 provider "aws" {
   region = "us-east-1"
+  profile = "bhaskarlabs"
 }
 
 data "aws_ami" "ubuntu" {
@@ -10,7 +11,7 @@ data "aws_ami" "ubuntu" {
     values = ["ubuntu/images/hvm-ssd-gp3/ubuntu-noble-24.04-amd64-server-*"]
   }
 
-  owners = ["048280526216"] # Canonical
+  owners = ["099720109477"] # Canonical, The "owner" is the AWS account ID that published the AMI
 }
 
 resource "aws_instance" "app_server" {
