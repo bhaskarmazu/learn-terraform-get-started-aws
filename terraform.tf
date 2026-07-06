@@ -1,4 +1,13 @@
 terraform {
+  cloud {
+    organization = "bhaskarlabs"
+
+    workspaces {
+      project = "Learn Terraform"
+      name = "learn-terraform-aws-get-started"
+    }
+  }
+
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -6,5 +15,5 @@ terraform {
     }
   }
 
-  required_version = ">= 1.2"
+  required_version = ">= 1.2.0"
 }
